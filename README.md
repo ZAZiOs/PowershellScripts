@@ -1,4 +1,4 @@
-# PowerShellScripts
+# PowershellScripts
  Some really useful (or not) powershell scripts
  
  More info about each of it you can find in separate folders readme
