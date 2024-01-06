@@ -1,4 +1,8 @@
-$resultFolder = './'
+#Created with love by ZAZiOs :heart:
+
+# Don't want to put this as input argument, so... (Don't forget the slash at the end)
+$resultFolder = './2mid/'
+
 if ($args.length -eq 0) {
 	Write-Host "`n                    =====mid2mp3====" -ForegroundColor Red
 	Write-Host "                    This tool needs:" -ForegroundColor Red
@@ -24,7 +28,7 @@ if ($args.length -eq 0) {
 	for (($i = 1); $i -lt $args.length; $i++)
 	{
 		fluidsynth -F .\temp.wav $args[0] $args[$i]
-		$result = $args[0].replace('.sf2', '') + '-' + $args[$i].replace('.mid','').replace('.\', "") + ".mp3"
+		$result = $args[0].replace('.sf2', '') + ', ' + $args[$i].replace('.mid','').replace('.\', "") + ".mp3"
 		$filepath = $toFolder + $result.replace('.\', '')
 		ffmpeg -i temp.wav -vn -ar 44100 -ac 2 -b:a 192k $filepath
 		rm 'temp.wav'
